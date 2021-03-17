@@ -1,0 +1,12 @@
+[Unit]
+Description=Hadoop YARN Node Manager
+
+[Service]
+Type=forking
+ExecStart=/edx/app/hadoop/hadoop/sbin/yarn-daemon.sh start nodemanager
+ExecStop=/edx/app/hadoop/hadoop/sbin/yarn-daemon.sh stop nodemanager
+User=hadoop
+Group=hadoop
+
+[Install]
+WantedBy=multi-user.target

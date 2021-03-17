@@ -1,0 +1,12 @@
+[Unit]
+Description=Hadoop Distributed File System Data Node
+
+[Service]
+Type=forking
+ExecStart=/edx/app/hadoop/hadoop/sbin/hadoop-daemon.sh --script hdfs start datanode
+ExecStop=/edx/app/hadoop/hadoop/sbin/hadoop-daemon.sh --script hdfs stop datanode
+User=hadoop
+Group=hadoop
+
+[Install]
+WantedBy=multi-user.target

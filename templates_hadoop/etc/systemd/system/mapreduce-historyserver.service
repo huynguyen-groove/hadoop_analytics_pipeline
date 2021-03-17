@@ -1,0 +1,12 @@
+[Unit]
+Description=Hadoop MapReduce History Server
+
+[Service]
+Type=forking
+ExecStart=/edx/app/hadoop/hadoop/sbin/mr-jobhistory-daemon.sh start historyserver
+ExecStop=/edx/app/hadoop/hadoop/sbin/mr-jobhistory-daemon.sh stop historyserver
+User=hadoop
+Group=hadoop
+
+[Install]
+WantedBy=multi-user.target

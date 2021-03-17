@@ -1,0 +1,12 @@
+[Unit]
+Description=Hadoop YARN Proxy Server
+
+[Service]
+Type=forking
+ExecStart=/edx/app/hadoop/hadoop/sbin/yarn-daemon.sh start proxyserver
+ExecStop=/edx/app/hadoop/hadoop/sbin/yarn-daemon.sh stop proxyserver
+User=hadoop
+Group=hadoop
+
+[Install]
+WantedBy=multi-user.target

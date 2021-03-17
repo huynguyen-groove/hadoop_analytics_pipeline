@@ -1,0 +1,12 @@
+[Unit]
+Description=Hadoop YARN Resource Manager
+
+[Service]
+Type=forking
+ExecStart=/edx/app/hadoop/hadoop/sbin/yarn-daemon.sh start resourcemanager
+ExecStop=/edx/app/hadoop/hadoop/sbin/yarn-daemon.sh stop resourcemanager
+User=hadoop
+Group=hadoop
+
+[Install]
+WantedBy=multi-user.target

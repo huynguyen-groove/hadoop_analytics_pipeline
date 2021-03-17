@@ -1,0 +1,16 @@
+/edx/var/log/tracking/tracking.log {
+  size 1M
+  compress
+  create
+  dateext
+  dateformat -%Y%m%d-%s
+  missingok
+  nodelaycompress
+  notifempty
+  rotate 16000
+  postrotate
+    /usr/bin/killall -HUP rsyslogd
+  endscript
+  lastaction
+  endscript
+}
